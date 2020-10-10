@@ -1,18 +1,20 @@
+// arrays
 var numeric = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var uppercase = ["A", "B", "C"];
-var lowercase = ["a", "b", "c"];
-var special = ["@", "#", "$"];
+var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var special = ["!", "@", "#", "$", "%", "^", "&"];
 
 // Assignment code here
 var generatePassword = function() {
-  var assignedNum = prompt("What length would you like your password? (Between 8 characters and no more than 128 characters)");
+  var assignedNum = prompt("What length would you like your password? (Anywhere between 8 characters and no more than 128 characters)");
   if (assignedNum <= 8 || assignedNum >= 128) {
     alert ("Please revise your character count.")
   }
-  var confirmNumeric = confirm("Would you like it to be numeric");
-  var confirmUppercase = confirm("Would you like it to be uppercase?");
-  var confirmLowercase = confirm("Would you like it to be lowercase?");
-  var confirmSpecial = confirm("Would you like it to be special?");
+  var confirmNumeric = confirm("Would you like the password to include numbers?");
+  var confirmUppercase = confirm("Would you like the password to include uppercase letters?");
+  var confirmLowercase = confirm("Would you like the password to include lowercase letters?");
+  var confirmSpecial = confirm("Would you like the password to include special characters?");
+  // emtpy array 
   var possibilities = [];
   if (confirmNumeric) {
     possibilities = possibilities.concat(numeric);
