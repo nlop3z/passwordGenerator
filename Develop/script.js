@@ -15,6 +15,7 @@ var generatePassword = function() {
   var assignedNum = prompt("What length would you like your password? (Anywhere between 8 characters and no more than 128 characters)");
   if (assignedNum <= 8 || assignedNum >= 128) {
     alert ("Please pick a valid character count.")
+    return;
   }
   if (isNaN(assignedNum) === true) {
     alert("Value entered must be numberic.");
@@ -47,14 +48,14 @@ var randomChar = getRandomChar(possibilities);
 result.push(randomChar)
 console.log(result);
 }
-return result.join("")
+writePassword(result.join(''));
 }
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
+function writePassword(password) {
+  
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
@@ -62,4 +63,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", generatePassword);
